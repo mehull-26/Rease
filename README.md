@@ -21,3 +21,95 @@ b) Width & Height - As their name suggests, they initliaze the window with the e
 c) DWORD style - It is WIN32 API based paramter. Although it gives some deafult values, but incase you desire some other styles you can pass on it as a parameter of your choice. And for multiple styles, seprate them with a **" | "**. Check MSDN documentation on [DWORD style](https://learn.microsoft.com/en-us/windows/win32/winmsg/window-styles) for more information.
 
 ### 2) Creating Shapes and other Graphic functions 
+
+#### a) CreateEllipse
+Provides a method to draw an ellipse shape on screen.
+
+>	void CreateEllipse(Vector2 Center, float radiusX, float radiusY, Color color, bool fill, float stroke = 1);
+
+a) **Center**: Specifies the center coordinates of the ellipse.
+
+b) **radiusX & radiusY**: Define the horizontal and vertical radii of the ellipse.
+
+c) **Color**: Determines the color of the ellipse.
+
+d) **fill**: If true, fills the ellipse; if false, outlines it.
+
+e) **stroke**: Optional parameter for the outline thickness (default is 1).
+
+#### b) CreatePolygon
+Draws a polygon shape with a specified number of sides and side length.
+
+>	void CreatePolygon(Vector2 TopLeftPt, int sides, int sidelength, Color color, float stroke = 1.0f);
+
+a) **TopLeftPt**: Position of the top-left corner or starting point of the polygon.
+
+b) **sides**: Number of sides or vertices of the polygon.
+
+c) **sidelength**: Length of each side of the polygon.
+
+d) **Color**: Color of the polygon.
+
+e) **stroke**: Optional parameter for the outline thickness (default is 1).
+
+#### c) CreateLine
+Draws a straight line between two given points.
+
+>	void CreateLine(Vector2 pt1, Vector2 pt2, Color color, float stroke = 1.0f);
+
+a) **pt1 & pt2**: Endpoints of the line segment.
+
+b) **Color**: Color of the line.
+
+c) **stroke**: Optional parameter for the line thickness (default is 1).
+
+#### d) CreateGeometry
+Draws a custom geometry defined by an array of points.
+
+>	void CreateGeometry(int ElementCount, D2D1_POINT_2F PointArr[], Color color, bool fill, float stroke = 1.0f);
+
+a) **ElementCount**: Number of points in the `PointArr` array.
+
+b) **PointArr**: Array of `D2D1_POINT_2F` points defining the geometry. Just use the specified data type, for more details on it, [click here](https://learn.microsoft.com/en-us/windows/win32/direct2d/d2d1-point-2f).
+
+c) **Color**: Color of the geometry.
+
+d) **fill**: If true, fills the geometry; if false, outlines it.
+
+e) **stroke**: Optional parameter for the outline thickness (default is 1).
+
+#### e) AddImage
+Adds an image at a specified position with opacity and scale parameters.
+
+>	void AddImage(Vector2 topLeftPoint, std::string Path, float opacity, float scale);
+
+a) **topLeftPoint**: Position of the top-left corner where the image will be placed.
+
+b) **Path**: File path or identifier of the image file.
+
+c) **opacity**: Opacity level of the image (0.0 to 1.0, where 0.0 is fully transparent and 1.0 is fully opaque).
+
+d) **scale**: Scale factor for resizing the image.
+
+### 3) Input Handling
+
+#### a) IsKeyDown
+Checks if a specific key is currently pressed and returns a bool.
+
+>	bool IsKeyDown(unsigned int key);
+
+a) **key**: Unsigned integer representing the key identifier.
+
+#### b) MouseButtonDown
+Checks if a mouse button is currently pressed and returns a bool.
+
+>	bool MouseButtonDown(std::string button);
+
+a) **button**: String specifying the mouse button ("left", "right", etc.).
+
+#### c) ClickCoord
+Stores the coordinates of the last mouse click
+
+#### d) CurrentMouseCoord
+Stores the current coordinates of the mouse pointer.
+
