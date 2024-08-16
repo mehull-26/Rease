@@ -1,5 +1,5 @@
 # Rease
-Rease or RenderEase is a graphic library based on DIRECT2D and Wind32 API. IT offers you various methods and some class structures to help you enable render/draw various shapes. There are few things to see before working on any Rease project - 
+Rease or RenderEase is a graphic library based on DIRECT2D and Win32 API. IT offers you various methods and some class structures to help you enable render/draw various shapes. There are few things to see before working on any Rease project - 
 
 **i) Goto project properties -> Linker -> System -> Subsystem.** Check that it is "Console (/SUBSYSTEM:CONSOLE)". Although it is bydefault that only. But incase you would want to use the " Windows (/SUBSYSTEM:WINDOWS)" subsystem , you would have to change int main() to int WinMain(.....) with a bunch of parameters. You can go through that on the MSDN documentation.
 > https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-winmain
